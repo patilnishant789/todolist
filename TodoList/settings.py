@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
-import django_heroku
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -26,7 +25,7 @@ SECRET_KEY = 'hppemut%j5dqr()uh7@0c9@kmbl=*f%^bz%buk24!^#e5$r_4_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['nishanttodo.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -38,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'task.apps.TaskConfig'
+    'task.apps.TaskConfig',
+    'api.apps.ApiConfig'
 ]
 
 MIDDLEWARE = [
@@ -122,4 +122,3 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-django_heroku.settings(locals())
