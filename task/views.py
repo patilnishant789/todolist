@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from .models import TodoItem
+from datetime import datetime
 
 
 def index(request):
     all_items = TodoItem.objects.all()
-    return render(request, 'index.html', {'all_items': all_items})
+    date = datetime.now()
+    return render(request, 'index.html', {'all_items': all_items, 'date': date})
 
 
 def add(request):

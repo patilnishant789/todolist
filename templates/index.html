@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    List Updated: {{ date }}<br><br>
     <form action="add" method="POST">
         {% csrf_token %}
         <input type="text" name='item' placeholder="What you want to do today?">
